@@ -1546,7 +1546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579448621}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5, y: 0.5, z: 2.5}
+  m_LocalPosition: {x: 6.5, y: 0.5, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2331,7 +2331,7 @@ PrefabInstance:
     - target: {fileID: 8122248192225965164, guid: 54f3340298537426e96a6cc530e2d5d8,
         type: 3}
       propertyPath: AgentsList.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8122248192225965164, guid: 54f3340298537426e96a6cc530e2d5d8,
         type: 3}
@@ -2342,12 +2342,22 @@ PrefabInstance:
         type: 3}
       propertyPath: AgentsList.Array.data[1].Agent
       value: 
-      objectReference: {fileID: 1227493416}
+      objectReference: {fileID: 2121371077}
     - target: {fileID: 8122248192225965164, guid: 54f3340298537426e96a6cc530e2d5d8,
         type: 3}
       propertyPath: AgentsList.Array.data[2].Agent
       value: 
       objectReference: {fileID: 1789013606}
+    - target: {fileID: 8122248192225965164, guid: 54f3340298537426e96a6cc530e2d5d8,
+        type: 3}
+      propertyPath: AgentsList.Array.data[3].Agent
+      value: 
+      objectReference: {fileID: 1227493416}
+    - target: {fileID: 8122248192225965164, guid: 54f3340298537426e96a6cc530e2d5d8,
+        type: 3}
+      propertyPath: AgentsList.Array.data[4].Agent
+      value: 
+      objectReference: {fileID: 579448626}
     m_RemovedComponents:
     - {fileID: 8557426429796011212, guid: 54f3340298537426e96a6cc530e2d5d8, type: 3}
     - {fileID: 404683423509059512, guid: 54f3340298537426e96a6cc530e2d5d8, type: 3}
@@ -2671,7 +2681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850591395}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5, y: 0.5, z: 2.5}
+  m_LocalPosition: {x: -6.5, y: 0.5, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3656,7 +3666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227493411}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5, y: 0.5, z: -2.5}
+  m_LocalPosition: {x: 6.5, y: 0.5, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6415,7 +6425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121371072}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5, y: 0.5, z: -2.5}
+  m_LocalPosition: {x: -6.5, y: 0.5, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6613,7 +6623,11 @@ MonoBehaviour:
   twoImage: {fileID: 1114282116}
   oneImage: {fileID: 1340706803}
   goImage: {fileID: 1471854378}
-  PlusAgentsList: []
+  PlusAgentsList:
+  - {fileID: 850591395}
+  - {fileID: 2121371072}
+  - {fileID: 1227493411}
+  - {fileID: 579448621}
 --- !u!114 &2144024860
 MonoBehaviour:
   m_ObjectHideFlags: 0
