@@ -34,7 +34,6 @@ public class Score : MonoBehaviour
         t0 = GameObject.Find("__:0_");
         t1 = GameObject.Find("__:1_");
         t2 = GameObject.Find("__:2_");
-        Debug.Log(t2);
         f0 = GameObject.Find("__:_0");
         f1 = GameObject.Find("__:_1");
         f2 = GameObject.Find("__:_2");

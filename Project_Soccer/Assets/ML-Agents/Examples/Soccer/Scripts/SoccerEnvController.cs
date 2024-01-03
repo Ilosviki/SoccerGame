@@ -54,6 +54,8 @@ public class SoccerEnvController : MonoBehaviour
     private int playerScore = 0;
     private int agentScore = 0;
 
+    private bool isStart = true;
+
     void Start()
     {
 
@@ -80,6 +82,7 @@ public class SoccerEnvController : MonoBehaviour
             }
         }
         ResetScene();
+        isStart = false;
     }
 
     void FixedUpdate()
@@ -142,6 +145,9 @@ public class SoccerEnvController : MonoBehaviour
         ResetBall();
 
         //Reset Canvas
-        Countdown.instance.Counting();
+        if(!isStart)
+            Countdown.instance.Counting();
+        else
+            isStart = false;
     }
 }
