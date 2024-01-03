@@ -14,6 +14,8 @@ public class Countdown : MonoBehaviour
     [SerializeField] GameObject oneImage;
     [SerializeField] GameObject goImage;
 
+    [SerializeField] List<GameObject> PlusAgentsList = new List<GameObject>();
+
     public static Countdown instance;
 
     void Awake()
@@ -36,7 +38,8 @@ public class Countdown : MonoBehaviour
         player.GetComponent<SphereCollider>().enabled = false;
         player.GetComponent<BoxCollider>().enabled = false;
         playerCamera.GetComponent<LookAround>().enabled = false;
-        player.transform.position = new Vector3(-3.19f, 0.5f, 0f);
+        foreach (var item in PlusAgentsList)
+            item.GetComponent<AgentSoccer>().enabled = false;
         StartCoroutine(CountingDown(startingTime));
     }
 
@@ -52,7 +55,6 @@ public class Countdown : MonoBehaviour
                 case 3:
                     twoImage.SetActive(true);
                     threeImage.SetActive(false);
-                    player.transform.position = new Vector3(-3.19f, 0.5f, 0f);
                     break;
                 case 2:
                     oneImage.SetActive(true);
@@ -66,6 +68,8 @@ public class Countdown : MonoBehaviour
                     player.GetComponent<SphereCollider>().enabled = true;
                     player.GetComponent<BoxCollider>().enabled = true;
                     playerCamera.GetComponent<LookAround>().enabled = true;
+                    foreach (var item in PlusAgentsList)
+                        item.GetComponent<AgentSoccer>().enabled = true;
                     break;
                 case 0:
                     goImage.SetActive(false);
