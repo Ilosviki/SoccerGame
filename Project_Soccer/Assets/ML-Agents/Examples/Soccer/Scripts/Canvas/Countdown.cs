@@ -28,16 +28,22 @@ public class Countdown : MonoBehaviour
         agent = GameObject.Find("PurpleStriker");
         player = GameObject.Find("BlueStriker");
         playerCamera = GameObject.Find("PlayerCamera");
+        if(player == null)
+            PlusAgentsList.Add(GameObject.Find("BlueAgent"));
         Counting();
     }
 
     public void Counting()
     {
         agent.GetComponent<AgentSoccer>().enabled = false;
-        player.GetComponent<MoveCharacter>().enabled = false;
-        player.GetComponent<SphereCollider>().enabled = false;
-        player.GetComponent<BoxCollider>().enabled = false;
-        playerCamera.GetComponent<LookAround>().enabled = false;
+        if (player != null)
+        {
+            player.GetComponent<MoveCharacter>().enabled = false;
+            player.GetComponent<SphereCollider>().enabled = false;
+            player.GetComponent<BoxCollider>().enabled = false;
+            playerCamera.GetComponent<LookAround>().enabled = false;
+        }
+        else 
         foreach (var item in PlusAgentsList)
             item.GetComponent<AgentSoccer>().enabled = false;
         StartCoroutine(CountingDown(startingTime));
@@ -64,10 +70,13 @@ public class Countdown : MonoBehaviour
                     goImage.SetActive(true);
                     oneImage.SetActive(false);
                     agent.GetComponent<AgentSoccer>().enabled = true;
-                    player.GetComponent<MoveCharacter>().enabled = true;
-                    player.GetComponent<SphereCollider>().enabled = true;
-                    player.GetComponent<BoxCollider>().enabled = true;
-                    playerCamera.GetComponent<LookAround>().enabled = true;
+                    if (player != null)
+                    {
+                        player.GetComponent<MoveCharacter>().enabled = true;
+                        player.GetComponent<SphereCollider>().enabled = true;
+                        player.GetComponent<BoxCollider>().enabled = true;
+                        playerCamera.GetComponent<LookAround>().enabled = true;
+                    }
                     foreach (var item in PlusAgentsList)
                         item.GetComponent<AgentSoccer>().enabled = true;
                     break;
